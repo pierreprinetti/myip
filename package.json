@@ -1,0 +1,20 @@
+{
+  "name": "myip",
+  "version": "1.0.0",
+  "description": "Responds with caller IP and its reverse DNS.",
+  "main": "serve.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node serve.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qrawl/myip.git"
+  },
+  "author": "Pierre Prinetti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qrawl/myip/issues"
+  },
+  "homepage": "https://github.com/qrawl/myip"
+}
