@@ -3,7 +3,6 @@ var http = require('http');
 
 
 http.createServer(function(req, res) {
-  con
   var callerIp = req.headers['x-forwarded-for']
   console.log('Serving request from', callerIp)
   res.writeHead(200, {
