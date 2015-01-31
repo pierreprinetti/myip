@@ -10,13 +10,13 @@ http.createServer(function(req, res) {
         res.writeHead(500, {
           'Content-Type': 'text/plain'
         });
-        res.end('Internal server error.');
+        res.end('Internal server error.\n');
       } else {
         res.writeHead(200, {
           'Content-Type': 'text/plain'
         });
-        res.write('Your IP: ' + callerIp);
-        res.write('Reverse DNS: ' + domains);
+        res.write('Your IP: ' + callerIp + '\n');
+        res.write('Reverse DNS: ' + domains + '\n');
         res.end();
       }
     });
