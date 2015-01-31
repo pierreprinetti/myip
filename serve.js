@@ -15,8 +15,8 @@ http.createServer(function(req, res) {
         res.writeHead(200, {
           'Content-Type': 'text/plain'
         });
-        res.write('Your IP:', callerIp);
-        res.write('Reverse DNS:', domains);
+        res.write('Your IP: ' + callerIp);
+        res.write('Reverse DNS: ' + domains);
         res.end();
       }
     });
