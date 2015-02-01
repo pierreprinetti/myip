@@ -6,19 +6,16 @@ http.createServer(function(req, res) {
     console.log('Serving request from', callerIp)
 
     dns.reverse(callerIp, function(err, domains) {
+      res.writeHead(200, {
+        'Content-Type': 'text/plain'
+      });
+      res.write('Your IP: ' + callerIp + '\n');
       if (err) {
-        res.writeHead(500, {
-          'Content-Type': 'text/plain'
-        });
-        res.end('Internal server error.\n');
+        res.write('Error while getting the reverse DNS: ' + err + '\n');
       } else {
-        res.writeHead(200, {
-          'Content-Type': 'text/plain'
-        });
-        res.write('Your IP: ' + callerIp + '\n');
         res.write('Reverse DNS: ' + domains + '\n');
-        res.end();
       }
+      res.end();
     });
   })
   .listen(8080, 'localhost');
