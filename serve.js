@@ -19,16 +19,16 @@ http.createServer(function(req, res) {
 
       dns.reverse(callerIp[0], function(err, domains) {
         if (err) {
-          res.write('Error while getting the reverse DNS for ' + caller + '.\n');
+          res.write('Error while getting the reverse DNS for ' + callerIp[0] + '.\n');
         } else {
-          res.write('Reverse DNS for ' + caller + ': ' + domains + '\n');
+          res.write('Reverse DNS for ' + callerIp[0] + ': ' + domains + '\n');
         }
         if (callerIp.length > 1) {
-          dns.reverse(callerIp[0], function(err, domains) {
+          dns.reverse(callerIp[1], function(err, domains) {
             if (err) {
-              res.write('Error while getting the reverse DNS for ' + caller + '.\n');
+              res.write('Error while getting the reverse DNS for ' + callerIp[1] + '.\n');
             } else {
-              res.write('Reverse DNS for ' + caller + ': ' + domains + '\n');
+              res.write('Reverse DNS for ' + callerIp[1] + ': ' + domains + '\n');
             }
           });
         }
