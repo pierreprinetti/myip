@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/qrawl/myip/issues"
   },
-  "homepage": "https://github.com/qrawl/myip"
+  "homepage": "https://github.com/qrawl/myip",
+  "dependencies": {
+    "express": "^4.11.2",
+    "serve-favicon": "^2.2.0"
+  }
 }
