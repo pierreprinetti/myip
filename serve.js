@@ -30,7 +30,7 @@ http.createServer(function(req, res) {
             } else {
               res.write('Reverse DNS for ' + caller + ': ' + domains + '\n');
             }
-          }):
+          });
         }
         res.end();
       });
