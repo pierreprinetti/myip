@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "Responds with caller IP and its reverse DNS.",
   "main": "serve.js",
+  "devDependencies": {
+    "mocha": "latest"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node serve.js"
   },
   "repository": {
