@@ -17,17 +17,23 @@ http.createServer(function(req, res) {
         'Content-Type': 'text/plain; charset=utf-8"'
       });
 
-      callerIp.forEach(function(caller) {
-        console.log("Trying to reverse", caller)
-        dns.reverse(caller, function(err, domains) {
-          if (err) {
-            res.write('Error while getting the reverse DNS for ' + caller + '.\n');
-          } else {
-            res.write('Reverse DNS for ' + caller + ': ' + domains + '\n');
-          }
-        });
+      dns.reverse(callerIp[0], function(err, domains) {
+        if (err) {
+          res.write('Error while getting the reverse DNS for ' + caller + '.\n');
+        } else {
+          res.write('Reverse DNS for ' + caller + ': ' + domains + '\n');
+        }
+        if (callerIp.length > 1) {
+          dns.reverse(callerIp[0], function(err, domains) {
+            if (err) {
+              res.write('Error while getting the reverse DNS for ' + caller + '.\n');
+            } else {
+              res.write('Reverse DNS for ' + caller + ': ' + domains + '\n');
+            }
+          }):
+        }
+        res.end();
       });
-      res.end("\n");
     }
   })
   .listen(8080, 'localhost');
