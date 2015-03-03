@@ -1,12 +1,12 @@
 var express = require('express');
 var dns = require('dns');
-var http = require('http');
 
 var app = express();
+app.disable('x-powered-by');
 
 app.get('/', function(req, res) {
   var d = new Date();
-  var callerStr = req.headers['x-forwarded-for']
+  var callerStr = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   console.log(d.toJSON(), 'Serving request from', callerStr);
 
   if (typeof callerStr === "undefined") {
@@ -25,5 +25,6 @@ app.get('/', function(req, res) {
   }
 });
 
+var d = new Date();
 app.listen(8080, 'localhost');
-console.log('Server running at localhost:8080');
+console.log(d.toJSON(), 'Server running at localhost:8080');
