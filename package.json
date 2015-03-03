@@ -4,7 +4,8 @@
   "description": "Responds with caller IP and its reverse DNS.",
   "main": "serve.js",
   "devDependencies": {
-    "mocha": "latest"
+    "mocha": "latest",
+    "request": "^2.53.0"
   },
   "scripts": {
     "test": "mocha",
@@ -21,7 +22,6 @@
   },
   "homepage": "https://github.com/qrawl/myip",
   "dependencies": {
-    "express": "^4.11.2",
-    "serve-favicon": "^2.2.0"
+    "express": "^4.12.2"
   }
 }
