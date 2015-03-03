@@ -10,7 +10,7 @@ describe('gather', function() {
 	});
 	it('should serve a correctly formatted JSON', function(done) {
 		// Now... Test!
-		request('http://localhost:8080/', function(err, res, body) {
+		request('http://127.0.0.1:8080/', function(err, res, body) {
 			var data = JSON.parse(body);
 			var expectedIp = '127.0.0.1';
 			assert.equal(data.ip, expectedIp);
