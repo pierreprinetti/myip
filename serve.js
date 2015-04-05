@@ -1,7 +1,6 @@
+var config = require('./config')
 var express = require('express');
 var dns = require('dns');
-
-var PORT = 8003;
 
 var app = express();
 app.disable('x-powered-by');
@@ -28,5 +27,5 @@ app.get('/', function(req, res) {
 });
 
 var d = new Date();
-app.listen(PORT, 'localhost');
-console.log(d.toJSON(), 'Server running at localhost:' + PORT);
+app.listen(config.listenToPort, 'localhost');
+console.log(d.toJSON(), 'Server running at localhost:' + config.listenToPort);
