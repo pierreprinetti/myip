@@ -1,12 +1,12 @@
 FROM node:0
 
-COPY ./* /src/
+COPY . /src
 
-RUN cd /src/ && npm install
+RUN cd /src; npm install
 
 ENV NODE_ENV=production
 
 EXPOSE 8003
 
-ENTRYPOINT node /src/serve.js
+CMD ["node", "/src/serve.js"]
 
