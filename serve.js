@@ -27,5 +27,5 @@ app.get('/', function(req, res) {
 });
 
 var d = new Date();
-app.listen(config.listenToPort, 'localhost');
+app.listen(config.listenToPort);
 console.log(d.toJSON(), 'Server running at localhost:' + config.listenToPort);
